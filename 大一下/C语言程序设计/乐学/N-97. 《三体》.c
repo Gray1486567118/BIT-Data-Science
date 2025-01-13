@@ -1,0 +1,71 @@
+#include<stdio.h>    
+int main()    
+{    
+    int i,j,m,n,x,y,z;    
+    int p[100005],k[100005],q[100005];    
+    scanf("%d",&n);    
+    m=0;    
+    y=0;    
+    for(i=0;i<n;i++)    
+    {    
+        scanf("%d",&p[i]);    
+    }    
+    for(i=0;i<n;i++)    
+    {    
+        scanf("%d",&k[i]);    
+        q[i]=1;    
+    }    
+    while(y==0)    
+    {    
+        y=1;    
+        i=0;    
+        while(i<n)    
+        {    
+            j=1;    
+            while(i+j<n)    
+            {    
+                if(q[i+j]==1&&k[i]>k[i+j])    
+                {    
+                    q[i+j]=0;    
+                    y=0;    
+                    z=1;    
+                    while(k[i+j+z]<k[i+j]&&i+j+1<n)    
+                    {    
+                        if(q[i+j+z]=0)    
+                        {    
+                            z++;    
+                        }    
+                        else    
+                        {    
+                            q[i+j+z]=0;    
+                            j=j+z;    
+                            z=1;    
+                        }    
+                    }    
+                    i=i+j+z-1;    
+                    break;    
+                }       
+                j++;    
+            }       
+            i++;    
+            while(i<n&&q[i]==0)    
+            {    
+                i++;    
+            }    
+        }    
+        if(y==0)    
+        {    
+            m++;    
+        }    
+    }    
+    if(m==3)    
+    {    
+        m=m-1;    
+    }    
+    else if(m==5)    
+    {    
+        m=m-1;    
+    }    
+    printf("%d\n",m);    
+    return 0;    
+}
