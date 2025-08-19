@@ -1,0 +1,16 @@
+train_path: "../data/train.json" # 训练数据
+val_path: "../data/val.json"   # 验证数据
+test_path: "../data/test_input.json" # 测试输入数据
+test_output_path: "../data/test_output.json" # 测试答案
+
+# 模型和训练参数
+num_disease_labels: 4
+num_syndrome_labels: 10
+input_dim: 63 
+hidden_dim: 128
+dropout_prob: 0.3
+epochs: 50
+batch_size: 32
+learning_rate: 0.001
+save_path: "./numeric_model_output"
+log_interval: 10

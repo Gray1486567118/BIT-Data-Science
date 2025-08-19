@@ -1,0 +1,24 @@
+# 实验名称，用于日志或输出区分
+exp_name: tcm
+# 随机种子，保证可复现
+seed: 42
+
+# 预训练模型
+model_name: hfl/chinese-roberta-wwm-ext
+
+
+# 参数
+max_length: 512
+train_batch_size: 16
+eval_batch_size: 32
+lr: 2e-5
+num_epochs: 30
+
+# 数据文件路径，相对于 project 根目录
+data:
+  train_path: ../data/train.json
+  val_path:   ../data/val.json
+
+# 模型及日志输出目录
+output_dir: ./output_model/
+logging_dir: ./logs/
